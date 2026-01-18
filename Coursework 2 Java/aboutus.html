@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us / LIMatchVE</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 10px;
+        background-color: whitesmoke;
+        box-sizing: border-box;
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.715);
+    }
+
+    .topnav a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .topnav a:hover {
+        background-color: grey;
+        color: black;
+    }
+
+    .videohead {
+        position: relative;
+        width: 100%;
+        height: 450px;
+        overflow: hidden;
+    }
+
+    .videohead video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 82%;
+        z-index: 0;
+    }
+
+    .videohead .videotxt {
+        position: relative;
+        z-index: 1;
+        color: white;
+        text-align: center;
+        padding: 150px 20px 0 20px;
+        text-shadow: 2px 2px 8px grey;
+    }
+
+    .video-section {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .video-section video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        background-color: black;
+        z-index: 0;
+    }
+
+    .video-section .videotxt {
+        position: relative;
+        z-index: 2;
+        color: white;
+        max-width: 900px;
+        margin: auto;
+        padding: 80px 20px;
+        text-shadow: 2px 2px 8px grey;
+    }
+
+    .card {
+        position: relative;
+        z-index: 3;
+        background-color: rgba(120, 120, 120, 0.45);
+        padding: 20px;
+        margin: 50px auto;
+        border-radius: 10px;
+        max-width: 800px;
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 600px) {
+        .video-section video {
+            display: none;
+        }
+    }
+</style>
+</head>
+
+<body>
+<header>
+    <div class="videohead">
+        <video autoplay muted loop playsinline>
+            <source src="Bckground vid&img/1654787841-1654787841-pc-pixel-room-live-wallpaper-free.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="videotxt">
+            <h1>LIMatchVE (Beta)</h1>
+            <p>We offer live match scores across a wide range of games.</p>
+        </div>
+    </div>
+    <div class="topnav">
+        <a href="mainpage.html">Home</a>
+        <a href="games.html">Games</a>
+        <a href="matches.html">Matches</a>
+        <a href="players.html">Players</a>
+        <a href="teams.html">Teams</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="contacts.html" style="float:right">Contacts</a>
+        <a href="Sign Up.html" style="float:right">Sign Up</a>
+    </div>
+
+    <div class="video-section">
+        <video autoplay muted loop playsinline>
+            <source src="Bckground vid&img/5UEJoeNLQH4rU1Q_Pixel Summerhouse.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="card">
+            <div class="videotxt">
+                <h1>About Us</h1>
+                <p>Our aim is to create a global platform where players can connect, compete, and stay updated through live match scores and detailed player information. We currently focus on classic pixel-style games while also showcasing global competitions, such as CSGO tournaments, giving players access to real-time match updates from around the world.</p>
+                <p>Players can participate in 1 vs 1 matches by selecting games from our Match page. Before competing, users are able to view their opponent’s profile, which includes their latest matches, wins and losses, total number of matches played, player level, and other performance statistics. This allows players to better understand their opponents and track progress over time.</p>
+                <p>In addition to competitive features, our platform allows users to add other registered players, making it easy to build friendships and connect with gamers internationally. This social feature encourages interaction beyond matches and helps create a strong global gaming community.</p>
+                <p>We also provide comprehensive information about the games available on our website, including gameplay details, controls, and game history. This helps both new and experienced players learn more about each game and improve their skills.</p>
+                <p>Currently, our website is in beta, as we continue to develop and expand our platform. More games are in progress and will be added in the future as we work to enhance the overall experience for our users.</p>
+            </div>
+        </div>
+    </div>
+</header>
+</body>
+</html>
