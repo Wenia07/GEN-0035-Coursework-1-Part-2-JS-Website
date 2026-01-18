@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tetris / LIMatchVE</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.814);
+    }
+
+    .videohead {
+        position: relative;
+        width: 100%;
+        height: 450px;
+        overflow: hidden;
+    }
+
+    .videohead video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 82%;
+    }
+
+    .videotxt {
+        position: relative;
+        z-index: 1;
+        color: white;
+        text-align: center;
+        padding: 150px 20px 0 20px;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.715);
+    }
+
+    .topnav a {
+        float: left;
+        display: block;
+        color: whitesmoke;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .topnav a:hover {
+        background-color: lightgrey;
+        color: black;
+    }
+
+    @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        margin: 10px 0;
+    }
+
+    .signup-btn {
+        width: 80%;
+        margin: 10px 0;
+    }
+    }
+
+    .gamepic {
+    position: relative;
+    text-align: center;
+    color: white;
+    background: black;
+    }
+
+    .gamepic img {
+    width: 100%;
+    height: 500px;
+    display: block;
+    object-fit: cover;
+    object-position: center 60%;
+    }
+
+    .aboutgame {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+    }
+
+    .aboutbox {
+    max-width: 850px;
+    width: 100%;
+    text-align: left;
+    line-height: 1.8;
+    font-size: 18px;
+    color: white;
+    padding: 0 10px;
+    }
+
+    .aboutbox a {
+    color: orange;
+    }
+
+    .aboutgame h2 {
+    margin-left: 15px;
+    text-align: left;
+    }
+
+    .aboutbox p {
+    margin-bottom: 18px;
+    }
+
+    .learnmorebtn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: lightgrey;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    transform: 0.3s ease;
+    }
+
+    .learnmorebtn:hover {
+    background-color: darkgrey;
+    transform: translateY(-2px);
+    }
+</style>
+</head>
+<body>
+    <div class="videohead">
+        <video autoplay muted loop playsinline>
+            <source src="Bckground vid&img/1654787841-1654787841-pc-pixel-room-live-wallpaper-free.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="videotxt">
+            <h1>LIMatchVE (Beta)</h1>
+            <p>We offer live match scores across a wide range of games.</p>
+        </div>
+    </div>
+    <div class="topnav">
+        <a href="mainpage.html">Home</a>
+        <a href="games.html">Games</a>
+        <a href="matches.html">Matches</a>
+        <a href="players.html">Players</a>
+        <a href="teams.html">Teams</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="contacts.html" style="float:right">Contacts</a>
+        <a href="Sign Up.html" style="float:right">Sign Up</a>
+    </div>
+
+    <section class="gamepic">
+        <img src="https://www.thedigitalfix.com/wp-content/uploads/2021/05/tetris.jpg" alt="Tetris">
+    </section>
+
+    <section class="aboutgame">
+    <div class="aboutbox">
+        <h1>Tetris</h1>
+        <h2>About Us</h2>
+        <p>Tetris® is the iconic puzzle game that began it all, built on the simple idea of bringing order to chaos. Created by Alexey Pajitnov in 1984, the game combines his passion for puzzles with his programming expertise. Over the years, Tetris has become one of the most recognizable and successful video games in history, available on almost every gaming platform. This page is the official place to play free online single-player Tetris click PLAY and start enjoying one of the world's most popular puzzle games today.</p>
+        <a href="https://tetris.com/news/the-history-of-tetris" class="learnmorebtn">Learn More</a>
+    </div>
+    </section>
+
+    <section class="aboutgame">
+    <div class="aboutbox">
+        <h2>Objective</h2>
+        <p>The objective of Tetris is to earn as many points as possible by completing horizontal lines of blocks. Players rotate, move, and drop falling Tetriminos within the Matrix (playing field). A line is cleared when it is completely filled with blocks and contains no empty spaces.</p>
+        <p>As more lines are cleared, the level increases and Tetriminos fall faster, making the game increasingly challenging. The game ends when blocks stack beyond the top of the playing field.</p>
+    </div>
+    </section>
+
+    <section class="aboutgame">
+    <div class="aboutbox">
+        <h2>General Gameplay Info</h2>
+        <ul>
+            <li><b>GOAL</b> - Put your organizational skills and endurance to the test by clearing as many lines as possible.</li>
+            <li><b>CLEAR LINES</b> - Maneuver the falling Tetriminos to fit them together within the Matrix. To clear a line, fill every square within a single row.</li>
+            <li><b>SCORE POINTS</b>- Earn points by clearing lines. Clear multiple lines at once to increase your scoring opportunities.</li>
+            <li><b>GHOST PIECE </b>- Use the Ghost Piece to determine the best fit for the falling Tetrimino. This helpful guide appears directly below the falling Tetrimino and displays possible placements.</li>
+            <li><b>NEXT QUEUE</b>- Preview the upcoming Tetrimino in the Next Queue to plan ahead and increase your scoring opportunities.</li>
+            <li><b>HOLD QUEUE </b>- Store a falling Tetrimino in the Hold Queue for later use.</li>
+            <li><b>GAME OVER </b> - Stack the Tetriminos too high and the game is over!</li>
+        </ul>
+        <a href="https://onlinetetris.org/blog/how-to-play-tetris" class="learnmorebtn">Learn More</a>
+    </div>
+    </section>
+
+    <section class="aboutgame">
+    <div class="aboutbox">
+        <h2>Controls & Scores</h2>
+        <img src="https://play.tetris.com/images/tetris-controls.png" alt="Tetris Controls">
+    </div>
+    </section>
+
+    <section class="aboutgame">
+    <div class="aboutbox">
+        <p>Learn more at <a href="https://tetris.com/about">Tetris.com</a>, or follow us on <a href="https://www.facebook.com/Tetris/">Facebook</a> and <a href="https://www.instagram.com/tetris_official/">Instagram</a></p>
+    </div>
+    </section>
+
+</body>
+</html>

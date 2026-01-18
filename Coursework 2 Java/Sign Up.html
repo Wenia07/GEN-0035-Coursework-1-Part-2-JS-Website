@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up / LIMatchVE</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: whitesmoke;
+    }
+
+    .videohead {
+        position: relative;
+        height: 450px;
+        overflow: hidden;
+    }
+
+    .videohead video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 82%;
+    }
+
+    .videotxt {
+        position: relative;
+        color: white;
+        text-align: center;
+        padding-top: 150px;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.715);
+    }
+
+    .topnav a {
+        float: left;
+        padding: 14px 16px;
+        color: whitesmoke;
+        text-decoration: none;
+    }
+
+    .topnav a:hover {
+        background-color: lightgrey;
+        color: black;
+    }
+
+    .video-section {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .video-section video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .page-left {
+        position: relative;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-container {
+        width: 500px;
+        padding: 30px;
+        border-radius: 10px;
+        background-color: rgba(120,120,120,0.45);
+        backdrop-filter: blur(6px);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: black;
+    }
+
+    .input-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        color: black;
+    }
+
+    input,
+    select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid grey;
+    }
+
+    .input-row {
+        display: flex;
+        gap: 10px;
+    }
+
+    .input-row .input-group {
+        flex: 1;
+    }
+
+    .checkbox-row label {
+        display: inline-block;
+        font-size: 14px;
+    }
+
+    .button-group {
+        margin-top: 20px;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+    }
+
+    .submit-btn.secondary {
+        background-color: grey;
+        color: white;
+    }
+
+    .submit-btn:hover {
+        opacity: 0.85;
+    }
+
+    @media (max-width: 600px) {
+        .input-row {
+            flex-direction: column;
+        }
+        .video-section video {
+            display: none;
+        }
+    }
+</style>
+</head>
+
+<body>
+    <div class="videohead">
+        <video autoplay muted loop playsinline>
+            <source src="Bckground vid&img/1654787841-1654787841-pc-pixel-room-live-wallpaper-free.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="videotxt">
+            <h1>LIMatchVE (Beta)</h1>
+            <p>We offer live match scores across a wide range of games.</p>
+        </div>
+    </div>
+    <div class="topnav">
+        <a href="mainpage.html">Home</a>
+        <a href="games.html">Games</a>
+        <a href="matches.html">Matches</a>
+        <a href="players.html">Players</a>
+        <a href="teams.html">Teams</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="contacts.html" style="float:right">Contacts</a>
+        <a href="Sign Up.html" style="float:right">Sign Up</a>
+    </div>
+
+    <div class="video-section">
+        <video autoplay muted loop playsinline>
+            <source src="Bckground vid&img/1654787857-1654787857-pc-pixel-dark-souls-live-wallpaper-free.mp4" type="video/mp4">
+        </video>
+
+        <div class="page-left">
+            <div class="form-container">
+                <h2>Register</h2>
+                <form id="playerForm">
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="fname">First Name</label>
+                            <input type="text" id="fname" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="lname">Last Name</label>
+                            <input type="text" id="lname" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="usname">Username</label>
+                        <input type="text" id="usname" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="country">Country</label>
+                        <select id="country" required></select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="confirm_password">Confirm Password</label>
+                        <input type="password" id="confirm_password" required>
+                    </div>
+
+                    <div class="checkbox-row">
+                        <label>
+                            <input type="checkbox" required>
+                            I agree to Terms and Conditions
+                        </label>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit" class="submit-btn secondary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<script src="playerinfo.js" defer></script>
+</body>
+</html>

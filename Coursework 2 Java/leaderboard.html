@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leaderboard / LIMatchVE</title>
+<style>
+    body {
+        font-family: Arial;
+        padding: 10px;
+        background-color: whitesmoke;
+    }
+
+    .header {
+        padding: 30px;
+        text-align: center;
+        background-color: white;
+    }
+
+    .header h1 {
+        font-size: 50px;
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.715);
+    }
+
+    .topnav a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .topnav a:hover {
+        background-color: grey;
+        color: black;
+    }
+
+    .videohead {
+        position: relative;
+        width: 100%;
+        height: 450px;
+        overflow: hidden;
+    }
+
+    .videohead video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 82%;
+        z-index: 0;
+    }
+
+    .videohead .videotxt {
+        position: relative;
+        z-index: 1;
+        color: white;
+        text-align: center;
+        padding: 150px 20px 0 20px;
+        text-shadow: 2px 2px 8px grey;
+    }
+
+    .leaderboardbox {
+        max-width: 900px;
+        margin: 40px auto;
+        background-color: white;
+        padding: 30px;
+        border-radius: 14px;
+        box-shadow: 0 10px 30px grey;
+    }
+
+    .leaderboardbox h1 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .profilecards {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .card {
+        padding: 20px;
+        border-radius: 12px;
+        background-color: whitesmoke;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .card h2 {
+        margin: 0;
+        font-size: 20px;
+    }
+
+    .card p {
+        margin: 0 10px;
+    }
+
+    .top1 {
+        background: lightpink;
+        border: 2px solid pink;
+    }
+
+    .top2 {
+        background: lavender;
+        border: 2px solid mediumpurple;
+    }
+
+    .top3 {
+        background: thistle;
+        border: 2px solid plum;
+    }
+</style>
+</head>
+<body>
+    <div class="videohead">
+        <video autoplay muted loop playsinline>
+            <source src="Bckground vid&img/1654787841-1654787841-pc-pixel-room-live-wallpaper-free.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="videotxt">
+            <h1>LIMatchVE (Beta)</h1>
+            <p>We offer live match scores across a wide range of games.</p>
+        </div>
+    </div>
+    <div class="topnav">
+        <a href="mainpage.html">Home</a>
+        <a href="games.html">Games</a>
+        <a href="matches.html">Matches</a>
+        <a href="players.html">Players</a>
+        <a href="teams.html">Teams</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="contacts.html" style="float:right">Contacts</a>
+        <a href="Sign Up.html" style="float:right">Sign Up</a>
+    </div>
+
+    <div class="leaderboardbox">
+        <h1>Leaderboard (Top 10)</h1>
+        <div id="leaderboard" class="profilecards"></div>
+    </div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const board = document.getElementById("leaderboard");
+        let players = JSON.parse(localStorage.getItem("players")) || [];
+
+        players.sort((a, b) => b.wins - a.wins);
+
+        players.slice(0, 10).forEach((p, index) => {
+            let medalClass = "";
+            if (index === 0) medalClass = "top1";
+            if (index === 1) medalClass = "top2";
+            if (index === 2) medalClass = "top3";
+
+            const div = document.createElement("div");
+            div.className = `card ${medalClass}`;
+            div.innerHTML = `
+                <h2>#${index + 1} ${p.username}</h2>
+                <p>Wins: ${p.wins}</p>
+                <p>Losses: ${p.losses}</p>
+                <p>Rank: ${p.rank}</p>
+            `;
+            board.appendChild(div);
+        });
+    });
+</script>
+
+</body>
+</html>

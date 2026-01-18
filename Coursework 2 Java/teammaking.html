@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Create Team / LIMatchVE</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: whitesmoke;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header h1 {
+        font-size: 50px;
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-color: rgba(0,0,0,0.715);
+    }
+
+    .topnav a {
+        float: left;
+        display: block;
+        color: whitesmoke;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .topnav a:hover {
+        background-color: lightgrey;
+        color: black;
+    }
+
+    .videohead {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+    }
+
+    .videohead video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 82%;
+        z-index: 0;
+    }
+
+    .videotxt {
+        position: relative;
+        z-index: 1;
+        color: white;
+        text-align: center;
+        padding: 100px 20px 0 20px;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+
+    .returncard {
+        margin: 20px;
+    }
+
+    .returnbtn {
+        display: inline-block;
+        padding: 10px 18px;
+        background-color: rgba(0,0,0,0.715);
+        color: whitesmoke;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 16px;
+    }
+
+    .returnbtn:hover {
+        background-color: rgba(50,50,50,0.8);
+    }
+
+    .teambox {
+        max-width: 600px;
+        margin: 30px auto;
+        background-color: lightgrey;
+        padding: 30px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .teambox h2 {
+        margin-bottom: 20px;
+    }
+
+    .teambox input[type="text"], .teambox select {
+        width: 80%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 6px;
+        border: 1px solid grey;
+        font-size: 16px;
+    }
+
+    .createbtn {
+        padding: 10px 20px;
+        border: none;
+        background-color: rgba(0,0,0,0.715);
+        color: whitesmoke;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .createbtn:hover {
+        background-color: rgba(50,50,50,0.8);
+    }
+
+    .teamoutp {
+        margin-top: 20px;
+        background-color: white;
+        padding: 15px;
+        border-radius: 8px;
+        text-align: left;
+    }
+</style>
+</head>
+<body>
+    <div class="videohead">
+        <video autoplay muted loop playsinline>
+            <source src="Bckground vid&img/1654787841-1654787841-pc-pixel-room-live-wallpaper-free.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="videotxt">
+            <h1>LIMatchVE (Beta)</h1>
+            <p>We offer live match scores across a wide range of games.</p>
+        </div>
+    </div>
+    <div class="topnav">
+        <a href="mainpage.html">Home</a>
+        <a href="games.html">Games</a>
+        <a href="matches.html">Matches</a>
+        <a href="players.html">Players</a>
+        <a href="teams.html">Teams</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="contacts.html" style="float:right">Contacts</a>
+        <a href="Sign Up.html" style="float:right">Sign Up</a>
+    </div>
+
+    <div class="returncard">
+        <a href="matches.html" class="returnbtn">&lt; Return</a>
+    </div>
+
+    <div class="teambox">
+        <h2>New Team</h2>
+
+        <input type="text" id="teamName" placeholder="Enter Team Name" required><br>
+
+        <select id="player1">
+            <option value="">Select Player 1</option>
+        </select><br>
+
+        <select id="player2">
+            <option value="">Select Player 2</option>
+        </select><br>
+
+        <button class="createbtn" id="createTeamBtn">Create Team</button>
+
+        <div class="teamoutp" id="teamOutput">
+        </div>
+    </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const player1Select = document.getElementById("player1");
+        const player2Select = document.getElementById("player2");
+        const teamOutput = document.getElementById("teamOutput");
+
+        let players = JSON.parse(localStorage.getItem("players")) || [];
+
+        if (players.length === 0) {
+            player1Select.innerHTML = "<option value=''>No players available</option>";
+            player2Select.innerHTML = "<option value=''>No players available</option>";
+            document.getElementById("createTeamBtn").disabled = true;
+        } else {
+            players.forEach(p => {
+                const option1 = document.createElement("option");
+                option1.value = p.username;
+                option1.textContent = p.username;
+                player1Select.appendChild(option1);
+
+                const option2 = document.createElement("option");
+                option2.value = p.username;
+                option2.textContent = p.username;
+                player2Select.appendChild(option2);
+            });
+        }
+
+        document.getElementById("createTeamBtn").addEventListener("click", () => {
+            const teamName = document.getElementById("teamName").value.trim();
+            const p1 = player1Select.value;
+            const p2 = player2Select.value;
+
+            if (!teamName || !p1 || !p2) { alert("Please enter team name and select 2 players!"); return; }
+            if (p1 === p2) { alert("Players must be different!"); return; }
+
+            let teams = JSON.parse(localStorage.getItem("teams")) || [];
+            teams.push({ name: teamName, players: [p1, p2] });
+            localStorage.setItem("teams", JSON.stringify(teams));
+
+            teamOutput.innerHTML = `
+                <h3>Team Created!</h3>
+                <p><strong>Team Name:</strong> ${teamName}</p>
+                <p><strong>Members:</strong> ${p1}, ${p2}</p>
+            `;
+
+            document.getElementById("teamName").value = "";
+            player1Select.value = "";
+            player2Select.value = "";
+        });
+    });
+</script>
+
+</body>
+</html>

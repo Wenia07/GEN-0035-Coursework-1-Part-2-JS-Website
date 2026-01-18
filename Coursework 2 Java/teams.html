@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Teams / LIMatchVE</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 10px;
+        background-color: whitesmoke;
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-color: rgba(0,0,0,0.715);
+    }
+
+    .topnav a {
+        float: left;
+        display: block;
+        color: whitesmoke;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .topnav a:hover {
+        background-color: lightgrey;
+        color: black;
+    }
+
+    .videohead {
+        position: relative;
+        width: 100%;
+        height: 450px;
+        overflow: hidden;
+    }
+
+    .videohead video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .videotxt {
+        position: relative;
+        z-index: 1;
+        color: white;
+        text-align: center;
+        padding-top: 150px;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+
+    .teams-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px;
+        padding: 40px;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .team-card {
+        background-color: rgba(255,255,255,0.15);
+        backdrop-filter: blur(8px);
+        border-radius: 16px;
+        padding: 25px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .team-card h2 {
+        margin-bottom: 10px;
+    }
+
+    .player-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .player-list li {
+        margin: 5px 0;
+        font-size: 14px;
+    }
+</style>
+</head>
+
+<body>
+    <div class="videohead">
+        <video autoplay muted loop playsinline>
+            <source src="Bckground vid&img/1654787841-1654787841-pc-pixel-room-live-wallpaper-free.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="videotxt">
+            <h1>LIMatchVE (Beta)</h1>
+            <p>We offer live match scores across a wide range of games.</p>
+        </div>
+    </div>
+    <div class="topnav">
+        <a href="mainpage.html">Home</a>
+        <a href="games.html">Games</a>
+        <a href="matches.html">Matches</a>
+        <a href="players.html">Players</a>
+        <a href="teams.html">Teams</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="contacts.html" style="float:right">Contacts</a>
+        <a href="Sign Up.html" style="float:right">Sign Up</a>
+    </div>
+
+    <h1 style="text-align:center; margin-top:20px;">Teams</h1>
+    <div id="teamsContainer" class="teams-grid"></div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const teamsContainer = document.getElementById("teamsContainer");
+
+        function renderTeams() {
+            const teams = JSON.parse(localStorage.getItem("teams")) || [];
+            teamsContainer.innerHTML = "";
+
+            if (teams.length === 0) {
+                teamsContainer.innerHTML = "<p style='text-align:center'>No teams registered.</p>";
+                return;
+            }
+
+            teams.forEach(team => {
+                const card = document.createElement("div");
+                card.className = "team-card";
+
+                let playerHTML = "";
+                if (team.players && team.players.length === 2) {
+                    playerHTML = `
+                        <p><strong>Player 1:</strong> ${team.players[0]}</p>
+                        <p><strong>Player 2:</strong> ${team.players[1]}</p>
+                    `;
+                } else if (team.players && team.players.length > 0) {
+                    playerHTML = `<p>${team.players.join(", ")}</p>`;
+                }
+
+                card.innerHTML = `<h2>${team.name}</h2>${playerHTML}`;
+                teamsContainer.appendChild(card);
+            });
+        }
+
+        renderTeams();
+    });
+</script>
+
+</body>
+</html>

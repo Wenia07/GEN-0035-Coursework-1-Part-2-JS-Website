@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tetris / LIMatchVE</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.814);
+    }
+
+    .videohead {
+        position: relative;
+        width: 100%;
+        height: 450px;
+        overflow: hidden;
+    }
+
+    .videohead video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 82%;
+    }
+
+    .videotxt {
+        position: relative;
+        z-index: 1;
+        color: white;
+        text-align: center;
+        padding: 150px 20px 0 20px;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.715);
+    }
+
+    .topnav a {
+        float: left;
+        display: block;
+        color: whitesmoke;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .topnav a:hover {
+        background-color: lightgrey;
+        color: black;
+    }
+
+    .gamepic {
+        position: relative;
+        text-align: center;
+        color: white;
+        background-color: black;
+    }
+
+    .gamepic img {
+        width: 100%;
+        height: 500px;
+        display: block;
+        object-fit: cover;
+        object-position: center 60%;
+    }
+
+    .aboutgame {
+        display: flex;
+        justify-content: center;
+        padding: 60px 20px;
+    }
+
+    .aboutbox {
+        max-width: 850px;
+        width: 100%;
+        text-align: left;
+        line-height: 1.8;
+        font-size: 18px;
+        color: white;
+        padding: 0 10px;
+    }
+
+    .aboutbox a {
+        color: orange;
+    }
+
+    .aboutgame h2 {
+        margin-left: 15px;
+        text-align: left;
+    }
+
+    .aboutbox p,
+    .aboutbox ul {
+        margin-bottom: 18px;
+    }
+
+    .learnmorebtn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: lightgrey;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        transition: 0.3s ease;
+    }
+
+    .learnmorebtn:hover {
+        background-color: darkgrey;
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+        .aboutgame {
+            flex-direction: column;
+            text-align: center;
+        }
+        .learnmorebtn {
+            width: 80%;
+            margin: 10px 0;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="videohead">
+        <video autoplay muted loop playsinline>
+            <source src="Bckground vid&img/1654787841-1654787841-pc-pixel-room-live-wallpaper-free.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="videotxt">
+            <h1>LIMatchVE (Beta)</h1>
+            <p>We offer live match scores across a wide range of games.</p>
+        </div>
+    </div>
+    <div class="topnav">
+        <a href="mainpage.html">Home</a>
+        <a href="games.html">Games</a>
+        <a href="matches.html">Matches</a>
+        <a href="players.html">Players</a>
+        <a href="teams.html">Teams</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="contacts.html" style="float:right">Contacts</a>
+        <a href="Sign Up.html" style="float:right">Sign Up</a>
+    </div>
+
+    <section class="gamepic">
+        <img src="https://play-lh.googleusercontent.com/V3-2L5Bu1C1g60le24DsCRPXrqDmeRXU8Dh0eScyIvjYE92d4MMlRgI7qWv7_nRv6BA=w526-h296" alt="Slither.io">
+    </section>
+
+    <section class="aboutgame">
+        <div class="aboutbox">
+            <h1>Slither.io</h1>
+            <h2>About Us</h2>
+            <p>Slither.io is a massively multiplayer browser game developed by Steve Howse. Players control a snake-like avatar that grows by consuming multicolored pellets, either from other players or that naturally appear on the map. The game is similar to Agar.io and reminds players of the classic arcade game Snake. Its popularity increased after being promoted by YouTubers such as PewDiePie. An Android version was released on March 27, 2016, and quickly topped the Google Play Store charts.</p>
+            <a href="https://slitherio-archive.fandom.com/wiki/Slither.io" class="learnmorebtn">Learn More</a>
+        </div>
+    </section>
+
+    <section class="aboutgame">
+        <div class="aboutbox">
+            <h2>Objective</h2>
+            <p>The main goal of Slither.io is to grow your snake as long as possible while avoiding collisions with other players. Consuming pellets and outmaneuvering opponents are key strategies to become the longest snake on the server.</p>
+            <a href="https://slitherio-archive.fandom.com/wiki/Slither.io" class="learnmorebtn">Learn More</a>
+        </div>
+    </section>
+
+    <section class="aboutgame">
+        <div class="aboutbox">
+            <h2>General Gameplay Info</h2>
+            <ul>
+                <li><b>GOAL</b> - Control your snake and grow as long as possible by consuming pellets and defeating other players.</li>
+                <li><b>PELLETS</b> - Eat multicolored pellets that spawn naturally or come from defeated snakes to increase your mass and length.</li>
+                <li><b>BOOST MODE</b> - Press space or click to speed up your snake. Boosting loses some mass but helps outmaneuver opponents.</li>
+                <li><b>DEFEATING OTHERS</b> - Trap other snakes by coiling around them to force collisions. Their bodies turn into bright pellets matching their color for you to consume.</li>
+                <li><b>AVOID COLLISIONS</b> - Hitting another snake’s body or the border ends the game. Only collisions with other snakes create consumable pellets.</li>
+                <li><b>STRATEGY</b> - Use skillful movement, coiling, and boost maneuvers to outplay opponents.</li>
+                <li><b>VICTORY MESSAGE</b> - The player with the biggest snake at the end can send a "victory message" to the world.</li>
+            </ul>
+            <a href="https://onlinetetris.org/blog/how-to-play-tetris" class="learnmorebtn">Learn More</a>
+        </div>
+    </section>
+
+    <section class="aboutgame">
+        <div class="aboutbox">
+            <h2>Controls & Scores</h2>
+            <ul>
+                <li><b>CONTROLS (Browser)</b> - Move your snake using the mouse or arrow keys.</li>
+                <li><b>CONTROLS (Mobile)</b> - Press and hold in the direction you want to move. Optionally, enable thumbstick mode for easier control.</li>
+                <li><b>SPEED BOOST</b> - Click/hold mouse or press up arrow/space to boost. Boosting sheds some length but helps outmaneuver opponents.</li>
+            </ul>
+            <a href="https://slitherio-archive.fandom.com/wiki/Controls" class="learnmorebtn">Learn More</a>
+        </div>
+    </section>
+
+    <section class="aboutgame">
+        <div class="aboutbox">
+            <p>Learn more at <a href="https://slitherio.fandom.com/wiki/Slither.io_Wiki">Slither.io.com</a>, or follow us on <a href="https://facebook.com/slitheriogame">Facebook</a>, <a href="https://www.youtube.com/channel/UCAGtxuWcErNsU5dn_miwcVA">Youtube</a>, and <a href="https://www.instagram.com/slitheriogame/">Instagram</a>.</p>
+        </div>
+    </section>
+
+</body>
+</html>

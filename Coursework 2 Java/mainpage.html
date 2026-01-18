@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Main / LIMatchVE</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: whitesmoke;
+        color: black;
+    }
+
+    .videohead {
+        position: relative;
+        width: 100%;
+        height: 450px;
+        overflow: hidden;
+    }
+
+    .videohead video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 82%;
+        z-index: 0;
+    }
+
+    .videohead .videotxt {
+        position: relative;
+        z-index: 1;
+        color: white;
+        text-align: center;
+        padding: 150px 20px 0 20px;
+        text-shadow: 2px 2px 8px grey;
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.715);
+    }
+
+    .topnav a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .topnav a:hover {
+        background-color: grey;
+        color: black;
+    }
+
+    .row {
+        display: flex;
+        max-width: 1200px;
+        margin: 30px auto;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .leftcolumn {
+        flex: 70%;
+    }
+
+    .rightcolumn {
+        flex: 30%;
+    }
+
+    .card {
+        background-color: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px grey;
+        transition: transform 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .imagelink {
+        position: relative;
+        display: block;
+        height: 300px;
+        overflow: hidden;
+        border-radius: 12px;
+    }
+
+    .imagelink img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    .imagetxt {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 28px;
+        font-weight: bold;
+        color: white;
+        opacity: 0;
+        background-color: rgba(0,0,0,0.35);
+        transition: opacity 0.4s ease;
+    }
+
+    .imagelink:hover img {
+        transform: scale(1.1);
+        filter: brightness(0.7);
+    }
+
+    .imagelink:hover .imagetxt {
+        opacity: 1;
+    }
+
+    .btn {
+        margin-top: 15px;
+    }
+
+    .btnlink {
+        display: inline-block;
+        padding: 10px 18px;
+        background-color: lightgrey;
+        color: black;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: bold;
+    }
+
+    .btnlink:hover {
+        background-color: darkgrey;
+    }
+
+    .aboutvid video {
+        width: 100%;
+        border-radius: 12px;
+    }
+</style>
+</head>
+<body>
+    <div class="videohead">
+        <video autoplay muted loop playsinline>
+            <source src="Bckground vid&img/1654787841-1654787841-pc-pixel-room-live-wallpaper-free.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="videotxt">
+            <h1>LIMatchVE (Beta)</h1>
+            <p>We offer live match scores across a wide range of games.</p>
+        </div>
+    </div>
+    <div class="topnav">
+        <a href="mainpage.html">Home</a>
+        <a href="games.html">Games</a>
+        <a href="matches.html">Matches</a>
+        <a href="players.html">Players</a>
+        <a href="teams.html">Teams</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="contacts.html" style="float:right">Contacts</a>
+        <a href="Sign Up.html" style="float:right">Sign Up</a>
+    </div>
+
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card">
+                <h2>Games</h2>
+                <a href="games.html" class="imagelink">
+                    <img src="https://i.ytimg.com/vi/04m05wdZAJk/maxresdefault.jpg" alt="Games">
+                    <div class="imagetxt">Explore Games</div>
+                </a>
+                <p>Discover gameplay, history, and controls for all available games on our platform.</p>
+            </div>
+
+            <div class="card">
+                <h2>Upcoming Matches</h2>
+                <a href="matches.html" class="imagelink">
+                    <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/02/tetris-effect-connected-1.jpg" alt="Matches">
+                    <div class="imagetxt">View Matches</div>
+                </a>
+                <p>Track upcoming matches, schedules, and live results.</p>
+            </div>
+        </div>
+
+        <div class="rightcolumn">
+            <div class="card">
+                <h2>About Us</h2>
+                <div class="aboutvid">
+                    <video autoplay muted loop>
+                        <source src="Bckground vid&img/ytClv1d29ou1J2M_Rd 2 Prob4.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <p>We provide live scores and competitive gaming experiences worldwide.</p>
+                <div class="btn">
+                    <a href="aboutus.html" class="btnlink">Read More</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Follow Us</h3>
+                <p><a href="https://www.instagram.com/" style="color:black">Instagram</a></p>
+                <p><a href="https://x.com/?lang=en-my" style="color:black">Twitter / X</a></p>
+                <p><a href="https://www.youtube.com/" style="color:black">YouTube</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
